@@ -10,5 +10,13 @@ col2=int(input("enter the number of columns of 2nd matrix"))
 max2=[[[]for j in range(col2)]for i in range(row2)]
 for i in range(row2):
     for j in range(col2):
-        max2=int(input("enter the element"))
+        max2[i][j]=int(input("enter the element"))
 print(max2)
+res=[[[]for j in range(col2)]for i in range(row1)]
+for i in range(row1):
+    for j in range(col2):
+        r=0
+        for k in range(col1):
+            r=r+max1[i][k]*max2[k][j]
+        res[i][j]=r
+print(res)
